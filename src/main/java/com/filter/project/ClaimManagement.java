@@ -18,10 +18,12 @@ public class ClaimManagement {
         {
             JMSProducer producer=jmsContext.createProducer();
 
-            JMSConsumer consumer=jmsContext.createConsumer(queue,"hospitalId=2");
+            JMSConsumer consumer=jmsContext.createConsumer(queue,"claimAmount BETWEEN 2000 AND 4000");
+            //JMSConsumer consumer=jmsContext.createConsumer(queue,"doctorName LIKE 'K%'");
 
             ObjectMessage objectMessage=jmsContext.createObjectMessage();
-            objectMessage.setIntProperty("hospitalId",1);
+            objectMessage.setDoubleProperty("claimAmount",2500);
+            //objectMessage.setStringProperty("doctorName","Krishna Murthy");
             Claim claim=new Claim();
             claim.setHospitalId(345);
             claim.setDoctorName("Krishna Murthy");

@@ -18,7 +18,7 @@ public class ClaimManagement {
         {
             JMSProducer producer=jmsContext.createProducer();
 
-            JMSConsumer consumer=jmsContext.createConsumer(queue,"hospitalId=2");
+            JMSConsumer consumer=jmsContext.createConsumer(queue,"hospitalId=1");
 
             ObjectMessage objectMessage=jmsContext.createObjectMessage();
             objectMessage.setIntProperty("hospitalId",1);
